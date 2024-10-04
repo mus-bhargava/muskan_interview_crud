@@ -1,0 +1,91 @@
+<div class="container mt-3">
+  <h2 class="mb-4">Add New Student</h2>
+  <form
+    [formGroup]="addStudent"
+    (ngSubmit)="saveStudent()"
+    class="shadow p-4 rounded bg-light"
+  >
+    <div class="mb-3">
+      <label for="firstName" class="form-label"
+        >First Name<span class="text-danger">*</span></label
+      >
+      <input
+        type="text"
+        class="form-control"
+        formControlName="firstName"
+        placeholder="Enter first name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="lastName" class="form-label"
+        >Last Name<span class="text-danger">*</span></label
+      >
+      <input
+        type="text"
+        class="form-control"
+        formControlName="lastName"
+        placeholder="Enter last name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="department" class="form-label"
+        >Department<span class="text-danger">*</span></label
+      >
+      <input
+        type="text"
+        class="form-control"
+        formControlName="department"
+        placeholder="Enter department"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label"
+        >Email<span class="text-danger">*</span></label
+      >
+      <input
+        type="email"
+        class="form-control"
+        formControlName="email"
+        placeholder="Enter email"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="country" class="form-label"
+        >Country<span class="text-danger">*</span></label
+      >
+      <input
+        type="text"
+        class="form-control"
+        formControlName="country"
+        placeholder="Enter country"
+      />
+    </div>
+    <!-- <div class="mb-3">
+      <input
+        [src]="profileImage"
+        type="file"
+        (change)="onImageSelected($event)"
+        accept="image/*"
+        class="form-control"
+      />
+    </div> -->
+    <div class="mb-3">
+      <input
+        type="file"
+        (change)="onImageSelected($event)"
+        accept="image/*"
+        class="form-control"
+      />
+      <img
+        *ngIf="profileImage"
+        [src]="profileImage"
+        alt="Profile Image"
+        style="width: 100px; height: 100px; margin-top: 10px"
+      />
+      <div *ngIf="imageFileName" class="mt-2">
+        <strong>Selected file:</strong> {{ imageFileName }}
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Add Student</button>
+  </form>
+</div>
